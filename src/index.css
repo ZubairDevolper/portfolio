@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-ink-950: #05060b;
+  --color-ink-900: #0a0c14;
+  --color-ink-800: #11141f;
+  --color-ink-700: #1b1f30;
+  --color-ink-600: #2a3049;
+
+  --color-brand-300: #a5b4fc;
+  --color-brand-400: #818cf8;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5;
+
+  --color-accent-300: #67e8f9;
+  --color-accent-400: #22d3ee;
+  --color-accent-500: #06b6d4;
+
+  --animate-blink: blink 1s step-end infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 11s ease-in-out infinite;
+  --animate-spin-slow: spin 14s linear infinite;
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-18px);
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.9);
+      opacity: 0.7;
+    }
+    70% {
+      transform: scale(1.6);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink-950 font-sans text-slate-300 antialiased;
+    background-image:
+      radial-gradient(60rem 60rem at 85% -10%, rgba(99, 102, 241, 0.16), transparent 60%),
+      radial-gradient(50rem 50rem at -10% 30%, rgba(6, 182, 212, 0.12), transparent 55%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgba(99, 102, 241, 0.35);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0c14;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #4f46e5, #06b6d4);
+    border-radius: 999px;
+    border: 2px solid #0a0c14;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply border border-white/10 bg-white/[0.03] backdrop-blur-xl;
+  }
+
+  .card-glow {
+    @apply relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl transition-all duration-300;
+  }
+
+  .card-glow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(129, 140, 248, 0.5), rgba(34, 211, 238, 0.15), transparent 60%);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .card-glow:hover::before {
+    opacity: 1;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-300 via-brand-400 to-accent-400 bg-clip-text text-transparent;
+  }
+
+  .grid-overlay {
+    background-image:
+      linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(34px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  * {
+    animation-duration: 0.001ms !important;
+  }
+}
