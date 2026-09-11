@@ -50,7 +50,7 @@ export default function About() {
           description="A developer who cares about the details — from architecture and performance to the little micro-interactions that make a product feel alive."
         />
 
-        <div className="mt-14 grid items-center gap-12 lg:grid-cols-2">
+        <div className="mt-14 grid items-center gap-12 lg:grid-cols-2">   
           <Reveal className="relative"> 
             <div className="relative mx-auto w-full max-w-sm">
               <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-brand-500/30 to-accent-500/20 blur-2xl" />
