@@ -16,7 +16,7 @@ export default function Navbar() {
       setScrolled(window.scrollY > 40);
       const height = document.documentElement.scrollHeight - window.innerHeight;
       setProgress(height > 0 ? (window.scrollY / height) * 100 : 0);
-    };
+    };   
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -44,7 +44,7 @@ export default function Navbar() {
         }`}
       >
         <button
-          onClick={() => scrollTo("home")}
+          onClick={() => scrollTo("home")}  
           className="group flex items-center gap-2.5 font-display text-lg font-bold text-white"
         >
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 text-sm font-black text-white shadow-lg shadow-brand-500/30 transition-transform group-hover:rotate-6">
