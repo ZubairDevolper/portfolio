@@ -157,8 +157,8 @@ export default function Hero() {
       </div>
 
       <button
-        onClick={() => scrollTo("about")}
-        className="mx-auto mt-16 hidden items-center gap-2 text-xs font-medium tracking-widest text-slate-500 uppercase transition-colors hover:text-white md:flex"
+        onClick={() => scrollTo("about")}  
+        className="mx-auto mt-16 hidden items-center gap-2 text-xs font-medium tracking-widest text-slate-500 uppercase transition-colors hover:text-white md:flex cursor-pointer"
       >
         Scroll
         <FiArrowDown className="animate-bounce" />  

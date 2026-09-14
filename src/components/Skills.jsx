@@ -1,9 +1,9 @@
 import { marqueeTech, skillGroups } from "../data/portfolio";
 import { useReveal } from "../hooks/useReveal";
-import Reveal from "./Reveal";
+import Reveal from "./Reveal";    
 import SectionHeading from "./SectionHeading";
 
-function SkillBar({ skill, delay }) {
+function SkillBar({ skill, delay }) {       
   const { ref, visible } = useReveal();
 
   return (
@@ -11,7 +11,7 @@ function SkillBar({ skill, delay }) {
       <div className="mb-2 flex items-center justify-between">
         <span className="flex items-center gap-2 text-sm font-medium text-slate-200">
           <skill.icon style={{ color: skill.color }} className="text-lg" />
-          {skill.name}
+          {skill.name}   
         </span>
         <span className="font-mono text-xs text-slate-500">{skill.level}%</span>
       </div>

@@ -16,7 +16,6 @@ import {
   SiJavascript,
   SiTypescript,
   SiTailwindcss,
-  SiRedux,
   SiVite,
   SiGit,
   SiFigma,
@@ -44,7 +43,7 @@ export const profile = {
   availability: "Open to new opportunities",
   resumeUrl: "/M-Zubair-CV.pdf",
   summary:
-    "I design and build fast, accessible and pixel-perfect web interfaces. With nearly a year of experience as a frontend developer at Drudots Company, I turn designs into clean, responsive experiences using React, Next.js and modern CSS.",
+    "I design and build fast, accessible and pixel-perfect web interfaces. With nearly a year of experience as a frontend developer at Drudots Technologies, I turn designs into clean, responsive experiences using React, Next.js and modern CSS.",
 };
 
 export const navLinks = [
@@ -65,7 +64,7 @@ export const socials = [
 ];
 
 export const stats = [
-  { value: 1, suffix: "+", label: "Year Experience" },
+  { value: 1, suffix: "+", label: "Year Experience" },    
   { value: 15, suffix: "+", label: "Projects Shipped" },
   { value: 10, suffix: "+", label: "Happy Clients" },
   { value: 5, suffix: "+", label: "Websites Launched" },
@@ -90,7 +89,6 @@ export const skillGroups = [
       { name: "HTML", level: 92, icon: SiHtml5, color: "#e34f26" },
       { name: "CSS", level: 88, icon: SiCss, color: "#1572b6" },
       { name: "TypeScript", level: 40, icon: SiTypescript, color: "#3178c6" },
-      { name: "Redux", level: 70, icon: SiRedux, color: "#764abc" },
       { name: "Vite", level: 82, icon: SiVite, color: "#a78bfa" },
     ],
   },
@@ -208,7 +206,7 @@ export const experience = [
   {
     type: "work",
     role: "Frontend Developer",
-    company: "Drudots Company",
+    company: "Drudots Technologies",
     period: "2026 — Present",
     description:
       "Building and maintaining responsive, high-quality interfaces for clients with React and Tailwind CSS.",
@@ -220,7 +218,7 @@ export const experience = [
     company: "Self Taught / Training",
     period: "6 Months",
     description:
-      "Learnt front-end web development from scratch — HTML, CSS, JavaScript and React — then started working at Drudots Company.",
+      "Learnt front-end web development from scratch — HTML, CSS, JavaScript and React — then started working at Drudots Technologies.",
     tags: ["HTML", "CSS", "JavaScript", "React"],
   },
 ];

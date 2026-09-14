@@ -19,7 +19,7 @@ export function useTypingEffect(words, { typeSpeed = 90, deleteSpeed = 45, pause
     } else {
       timeout = setTimeout(
         () => {
-          setText((prev) =>
+          setText((prev) =>   
             deleting ? current.slice(0, prev.length - 1) : current.slice(0, prev.length + 1),
           );
         },
@@ -28,7 +28,7 @@ export function useTypingEffect(words, { typeSpeed = 90, deleteSpeed = 45, pause
     }
 
     return () => clearTimeout(timeout);
-  }, [text, deleting, index, words, typeSpeed, deleteSpeed, pause]);
+  }, [text, deleting, index, words, typeSpeed, deleteSpeed, pause]);    
 
   return text;
 }

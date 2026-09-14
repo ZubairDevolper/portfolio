@@ -26,7 +26,7 @@ export default function Projects() {
             <button
               key={f}
               onClick={() => setFilter(f)}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
+              className={`rounded-full px-4 py-2 text-sm font-medium transition-all cursor-pointer ${
                 filter === f
                   ? "bg-gradient-to-r from-brand-500 to-accent-500 text-white shadow-lg shadow-brand-500/25"
                   : "border border-white/10 bg-white/5 text-slate-400 hover:border-brand-400/40 hover:text-white"
@@ -76,7 +76,7 @@ export default function Projects() {
                       {project.title}
                     </h3>
                     <span className="shrink-0 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 font-mono text-[10px] tracking-wide text-brand-300 uppercase">
-                      {project.category}
+                      {project.category}   
                     </span>
                   </div>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400">

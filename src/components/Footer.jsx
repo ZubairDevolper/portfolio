@@ -1,8 +1,18 @@
 import { FiHeart } from "react-icons/fi";
-import { navLinks, profile, socials } from "../data/portfolio";
+import { profile, socials } from "../data/portfolio";
+
+const footerLinks = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "skills", label: "Skills" },
+  { id: "projects", label: "Projects" },
+  { id: "experience", label: "Experience" },
+  { id: "contact", label: "Contact" },
+];
 
 export default function Footer() {
-  const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const scrollTo = (id) =>
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   const year = new Date().getFullYear();
 
   return (
@@ -20,7 +30,8 @@ export default function Footer() {
               Zubair
             </button>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">
-              {profile.headline} crafting fast, accessible and beautiful web experiences.
+              {profile.headline} crafting fast, accessible and beautiful web
+              experiences.
             </p>
           </div>
 
@@ -28,18 +39,24 @@ export default function Footer() {
             <h4 className="mb-4 font-display text-sm font-semibold tracking-wide text-white uppercase">
               Navigate
             </h4>
-            <ul className="flex flex-col gap-2.5">
-              {navLinks.map((link) => (
-                <li key={link.id}>
-                  <button
-                    onClick={() => scrollTo(link.id)}
-                    className="text-sm text-slate-400 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
+            <div className="grid grid-cols-2 gap-5">
+              {[footerLinks.slice(0, 3), footerLinks.slice(3)].map(
+                (col, ci) => (
+                  <ul key={ci} className="flex flex-col gap-2.5">
+                    {col.map((link) => (    
+                      <li key={link.id}>  
+                        <button
+                          onClick={() => scrollTo(link.id)}
+                          className="text-sm text-slate-400 transition-colors hover:text-white cursor-pointer"
+                        >
+                          {link.label}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                ),
+              )}
+            </div>
           </div>
 
           <div>
@@ -68,7 +85,8 @@ export default function Footer() {
             © {year} {profile.name}. All rights reserved.
           </p>
           <p className="flex items-center gap-1.5 text-xs text-slate-500">
-            Built with <FiHeart className="text-rose-400" /> using React & Tailwind CSS
+            Built with <FiHeart className="text-rose-400" /> using React &
+            Tailwind CSS
           </p>
         </div>
       </div>
