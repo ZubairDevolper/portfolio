@@ -49,14 +49,15 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-3">
               <button
                 onClick={() => scrollTo("projects")}
-                className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-accent-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/30 transition-transform hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand-500
+                 to-accent-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-500/30 transition-transform hover:-translate-y-0.5 cursor-pointer"
               >
                 View My Work
                 <FiArrowUpRight className="text-lg transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </button>
               <button
                 onClick={() => scrollTo("contact")}
-                className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10 cursor-pointer"
               >
                 <HiOutlineMail className="text-lg" />
                 Hire Me
@@ -152,7 +153,7 @@ export default function Hero() {
               <p className="font-display text-2xl font-bold text-white">1+</p>
               <p className="text-xs text-slate-400">year experience</p>
             </div>
-          </div>
+          </div>  
         </Reveal>
       </div>
 

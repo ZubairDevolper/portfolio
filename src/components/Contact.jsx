@@ -19,7 +19,7 @@ export default function Contact() {
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault();  
     setStatus("sending");
     try {
       const res = await fetch(FORM_ENDPOINT, {
@@ -93,7 +93,8 @@ export default function Contact() {
                       target="_blank"
                       rel="noreferrer"
                       aria-label={label}
-                      className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-lg text-slate-300 transition-all hover:-translate-y-0.5 hover:border-brand-400/50 hover:text-white"
+                      className="grid h-11 w-11 place-items-center rounded-xl border border-white/10
+                       bg-white/5 text-lg text-slate-300 transition-all hover:-translate-y-0.5 hover:border-brand-400/50 hover:text-white"
                     >
                       <Icon />
                     </a>
@@ -171,7 +172,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-accent-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
+                className="mt-6 inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-accent-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {status === "sending" ? (
                   <>
